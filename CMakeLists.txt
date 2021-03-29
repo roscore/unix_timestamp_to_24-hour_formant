@@ -8,7 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES pub_time
+  LIBRARIES unix_timestamp_to_24-hour_format 
   CATKIN_DEPENDS roscpp std_msgs
   DEPENDS system_lib
 )
