@@ -31,8 +31,8 @@ int main(int argc, char **argv)
 		else			ROS_INFO("AM || %d : %d : %d ", kor_hour / 3600, (kor_hour % 3600) / 60, kor_hour % 60);	
 	
 		unix_time_msg.data = utc_time;
-		utc_time_msg.data = "%d : %d : %d" , utc_hour / 3600, (utc_hour % 3600) / 60, utc_hour % 60;
-		kor_time_msg.data = "%d : %d : %d" , kor_hour / 3600, (kor_hour % 3600) / 60, kor_hour % 60;	
+		utc_time_msg.data = std::to_string(utc_hour / 3600) + " : " + std::to_string((utc_hour % 3600) / 60) + " : " + std::to_string(utc_hour % 60);
+		kor_time_msg.data = std::to_string(kor_hour / 3600) + " : " + std::to_string((kor_hour % 3600) / 60) + " : " + std::to_string(kor_hour % 60);	
 		
 		unix_time_pub.publish(unix_time_msg);
 		utc_time_pub.publish(utc_time_msg);
