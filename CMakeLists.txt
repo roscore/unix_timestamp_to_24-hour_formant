@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(pub_time)
+project(unix_timestamp_to_24-hour_format)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
