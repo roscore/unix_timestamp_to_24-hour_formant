@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	ros::Publisher unix_time_pub		= nh.advertise<std_msgs::Int32>("unix_time", 10);
 	ros::Publisher utc_time_pub			= nh.advertise<std_msgs::String>("utc_time", 10);
 	ros::Publisher kor_time_pub			= nh.advertise<std_msgs::String>("kor_time", 10);
-	ros::Publisher kor_time_status_pub	= nh.advertise<std_msgs::Bool>("time_status", 10);
+	ros::Publisher kor_time_status_pub	= nh.advertise<std_msgs::Int32>("time_status", 10);
 
 	ros::Rate loop_rate(100);
 
@@ -22,10 +22,10 @@ int main(int argc, char **argv)
 		std_msgs::Int32 	unix_time_msg;
 		std_msgs::String 	utc_time_msg;
 		std_msgs::String 	kor_time_msg;
-		std_msgs::Bool		kor_time_status_msg;
+		std_msgs::Int32		kor_time_status_msg;
 
 		int utc_time, utc_hour, kor_hour;
-		bool kor_time_status;
+		int kor_time_status;
 
 		utc_time = ros::Time::now().toSec();
 
